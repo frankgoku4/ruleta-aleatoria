@@ -193,7 +193,6 @@ entriesDiv.addEventListener("input", ()=>{
   else entriesDiv.classList.remove("empty");
 });
 
-// Partículas de fondo
 const particleCanvas = document.getElementById("particles");
 const particleCtx = particleCanvas.getContext("2d");
 particleCanvas.width = window.innerWidth;
@@ -236,7 +235,6 @@ const wheelCanvas = document.getElementById("wheelCanvas");
 const ctx = wheelCanvas.getContext("2d");
 const radius = wheelCanvas.width / 2;
 
-// Cargar nombres separados por línea o coma
 function loadNames(){
   names = [];
   const text = entriesDiv.innerText.trim();
@@ -292,7 +290,7 @@ function drawWheel(rotation=0){
     ctx.rotate(angle+sliceAngle/2);
     ctx.textAlign="center";
     ctx.textBaseline="middle";
-    ctx.fillStyle="#fff";
+    ctx.fillStyle="#000"; // <-- letras en negro
     ctx.font="bold 16px Arial";
     ctx.fillText(n,radius*0.6,0);
     ctx.restore();
